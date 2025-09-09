@@ -1,0 +1,13 @@
+# python related
+*.egg-info
+*.pyc
+*.pyo
+
+# tools related
+__pycache__/
+
+# venv related
+.venv/
+
+# instance
+/instance/

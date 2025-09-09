@@ -1,0 +1,6 @@
+!.vscode
+node_modules
+*.mo
+.env
+.devenv*
+devenv.local.nix
