@@ -2,6 +2,9 @@
 {
   dotenv.enable = true;
 
+  package.operaton.port = 8800;
+  package.operaton.deployment = ./bpmn;
+
   services.caddy = {
     enable = true;
     config = ''
@@ -24,10 +27,10 @@
 
   processes = {
     backend.exec = "make -C backend start";
+    fronted.exec = "make -C frontend dev";
   };
 
-  process.managers.process-compose.settings.environment = [
-  ];
+  process.managers.process-compose.settings.environment = [];
 
   # See full reference at https://devenv.sh/reference/options/
 }

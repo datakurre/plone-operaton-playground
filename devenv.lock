@@ -16,6 +16,36 @@
         "type": "github"
       }
     },
+    "devenv-module-mvn2nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1747244750,
+        "owner": "vasara-bpm",
+        "repo": "devenv-module-mvn2nix",
+        "rev": "8c8c821e20e82d7a12c900b8e9fdfe612aba5f7d",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "vasara-bpm",
+        "repo": "devenv-module-mvn2nix",
+        "type": "gitlab"
+      }
+    },
+    "devenv-module-operaton": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1757529071,
+        "owner": "vasara-bpm",
+        "repo": "devenv-module-operaton",
+        "rev": "a11d8aee593f7fd72e965b505bfae17157d41d4d",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "vasara-bpm",
+        "repo": "devenv-module-operaton",
+        "type": "gitlab"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -72,7 +102,40 @@
         "type": "github"
       }
     },
+    "mvn2nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "utils": "utils"
+      },
+      "locked": {
+        "lastModified": 1733432698,
+        "owner": "vasara-bpm",
+        "repo": "mvn2nix",
+        "rev": "19b9ed3b403b1da02650587f6b1fc74381446b1e",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "vasara-bpm",
+        "repo": "mvn2nix",
+        "type": "gitlab"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1757347588,
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b599843bad24621dcaa5ab60dac98f9b0eb1cabe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1742963555,
         "owner": "nixos",
@@ -90,11 +153,45 @@
     "root": {
       "inputs": {
         "devenv": "devenv",
+        "devenv-module-mvn2nix": "devenv-module-mvn2nix",
+        "devenv-module-operaton": "devenv-module-operaton",
         "git-hooks": "git-hooks",
-        "nixpkgs": "nixpkgs",
+        "mvn2nix": "mvn2nix",
+        "nixpkgs": "nixpkgs_2",
         "pre-commit-hooks": [
           "git-hooks"
         ]
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
       }
     }
   },

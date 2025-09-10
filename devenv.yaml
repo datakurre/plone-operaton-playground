@@ -2,5 +2,16 @@
 inputs:
   nixpkgs:
     url: github:nixos/nixpkgs/master
+  mvn2nix:
+    url: gitlab:vasara-bpm/mvn2nix
+  devenv-module-mvn2nix:
+    url: gitlab:vasara-bpm/devenv-module-mvn2nix
+    flake: false
+  devenv-module-operaton:
+    url: gitlab:vasara-bpm/devenv-module-operaton
+    flake: false
 imports:
+- devenv-module-mvn2nix
+- devenv-module-operaton
 - ./backend
+- ./frontend

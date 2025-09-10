@@ -1,0 +1,18 @@
+[project]
+name = "workflow"
+version = "0.1.0"
+description = "Plone operation workflow tasks"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.32.5",
+    "robotframework>=7.3.2",
+]
+
+[tool.purjo.topics."publish"]
+name = "Publish"
+process-variables = true
+
+[tool.purjo.topics."retract"]
+name = "Retract"
+process-variables = true
+
