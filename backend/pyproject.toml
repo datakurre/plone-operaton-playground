@@ -6,6 +6,7 @@ dependencies = [
     "plone.api",
     "plone.restapi",
     "plone.classicui",
+    "collective-webhook",
 ]
 requires-python = ">=3.11"
 
@@ -458,3 +459,6 @@ constraint-dependencies = [
     "Zope2==4.0",
     "ZopeUndo==6.0",
 ]
+
+[tool.uv.sources]
+collective-webhook = { git = "https://github.com/collective/collective.webhook" }

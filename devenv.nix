@@ -10,13 +10,14 @@
       }
       :8000 {
         handle_path "/++api++*" {
-          rewrite * /VirtualHostBase/https/${config.env.CODESPACE_NAME}-8000.${config.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}:443/Plone/++api++/VirtualHostRoot{uri}
+          rewrite * /VirtualHostBase/http/localhost:8000/Plone/++api++/VirtualHostRoot{uri}
           reverse_proxy localhost:8080
         }
         handle_path "/api*" {
-          rewrite * /VirtualHostBase/https/${config.env.CODESPACE_NAME}-8000.${config.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}:443/Plone/VirtualHostRoot/_vh_api{uri}
+          rewrite * /VirtualHostBase/http/localhost:8000/Plone/VirtualHostRoot/_vh_api{uri}
           reverse_proxy localhost:8080
         }
+        reverse_proxy http://localhost:5173
       }
     '';
   };
