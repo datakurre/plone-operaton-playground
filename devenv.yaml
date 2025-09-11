@@ -15,3 +15,4 @@ imports:
 - devenv-module-operaton
 - ./backend
 - ./frontend
+- ./tasks
