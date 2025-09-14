@@ -769,7 +769,7 @@ wheels = [
 [[package]]
 name = "collective-webhook"
 version = "0.4.0.dev0"
-source = { git = "https://github.com/collective/collective.webhook.git#49a1334b0857fa4d73166ab66c96a8ef96d564b0" }
+source = { git = "https://github.com/collective/collective.webhook.git#ce19fe571b55183c26ba1cc533bd2520ec8f7114" }
 dependencies = [
     { name = "requests" },
     { name = "zope-formlib" },
