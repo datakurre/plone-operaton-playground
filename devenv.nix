@@ -12,22 +12,23 @@
         admin off
       }
       :8000 {
-        handle_path "/++api++*" {
-          rewrite * /VirtualHostBase/http/localhost:8000/Plone/++api++/VirtualHostRoot{uri}
-          reverse_proxy localhost:8080
+        handle_path "/operaton*" {
+          rewrite * /operaton{uri}
+          reverse_proxy localhost:8800
         }
-        handle_path "/api*" {
-          rewrite * /VirtualHostBase/http/localhost:8000/Plone/VirtualHostRoot/_vh_api{uri}
-          reverse_proxy localhost:8080
-        }
-        reverse_proxy http://localhost:5173
+        @notOperaton not path /operaton*
+        ${if (config.env ? CODESPACE_NAME && config.env.CODESPACE_NAME != "") then ''
+        rewrite @notOperaton /VirtualHostBase/https/${config.env.CODESPACE_NAME}-8000.${config.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}:443/Plone/VirtualHostRoot{uri}
+        '' else ''
+        rewrite @notOperaton /VirtualHostBase/http/localhost:8000/Plone/VirtualHostRoot{uri}
+        ''}
+        reverse_proxy localhost:8080
       }
     '';
   };
 
   processes = {
     backend.exec = "make -C backend start";
-    fronted.exec = "make -C frontend dev";
   };
 
   process.managers.process-compose.settings.environment = [];

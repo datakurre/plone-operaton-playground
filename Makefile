@@ -3,9 +3,9 @@
 	@echo GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN=$$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN >>.env
 
 .PHONY:
-codespace-install: .env
+install: .env
 	@devenv shell -- echo "Ok."
 
 .PHONY:
-codespace-start: .env ## Start services at GitHub Codespaces
+up: .env ## Start services
 	@devenv up

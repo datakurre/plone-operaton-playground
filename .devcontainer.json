@@ -2,27 +2,27 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "bbenoist.Nix",
+        "be5invis.toml",
         "charliermarsh.ruff",
+        "d-biehl.robotcode",
         "ms-vscode.makefile-tools",
-        "bbenoist.Nix"
+        "miragon-gmbh.vs-code-bpmn-modeler"
       ]
     }
   },
   "image": "ghcr.io/cachix/devenv:v1.3.1",
   "overrideCommand": false,
-  "updateContentCommand": "make codespace-install",
+  "updateContentCommand": "make install",
   "portsAttributes": {
-    "3000": {
-      "label": "frontend"
+    "8080": {
+      "label": "backend"
     },
-    "3001": {
-      "label": "webpack"
+    "8800": {
+      "label": "engine"
     },
     "8000": {
       "label": "proxy"
-    },
-    "8080": {
-      "label": "backend"
     }
   }
 }
