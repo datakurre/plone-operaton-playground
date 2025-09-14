@@ -461,4 +461,4 @@ constraint-dependencies = [
 ]
 
 [tool.uv.sources]
-collective-webhook = { git = "https://github.com/collective/collective.webhook" }
+collective-webhook = { git = "https://github.com/collective/collective.webhook.git" }

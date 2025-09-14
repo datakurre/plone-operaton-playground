@@ -563,7 +563,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "collective-webhook", git = "https://github.com/collective/collective.webhook" },
+    { name = "collective-webhook", git = "https://github.com/collective/collective.webhook.git" },
     { name = "plone-api" },
     { name = "plone-classicui" },
     { name = "plone-restapi" },
@@ -769,7 +769,7 @@ wheels = [
 [[package]]
 name = "collective-webhook"
 version = "0.4.0.dev0"
-source = { git = "https://github.com/collective/collective.webhook#49a1334b0857fa4d73166ab66c96a8ef96d564b0" }
+source = { git = "https://github.com/collective/collective.webhook.git#49a1334b0857fa4d73166ab66c96a8ef96d564b0" }
 dependencies = [
     { name = "requests" },
     { name = "zope-formlib" },
@@ -4516,7 +4516,7 @@ wheels = [
 
 [[package]]
 name = "zope-formlib"
-version = "6.1"
+version = "7.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pytz" },
@@ -4536,9 +4536,9 @@ dependencies = [
     { name = "zope-security" },
     { name = "zope-traversing" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/fe/6f/7eda8612f4a57b4ac3f3c1dab010c45c307222a324dcfbdd705763822e6e/zope_formlib-6.1.tar.gz", hash = "sha256:2caa67c8d7bec0331c096894ee849ffe88eb18b20c0cbc2c2b5b4487f0228510", size = 123404 }
+sdist = { url = "https://files.pythonhosted.org/packages/88/07/294116b3b33465f2e73e6e3e5febd45d4506ed38317c8c89a879d820f2eb/zope_formlib-7.0.tar.gz", hash = "sha256:1b7655f3c7b7939eaca5076ae07f67e23c053e610b4837141d8bd50de496c3ff", size = 123515 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b5/83/3028bcfab8d99bfa7ab4d0932625f2a213d79096037c7a23697c52460450/zope.formlib-6.1-py3-none-any.whl", hash = "sha256:c078a32f143c6247ecbb26691145d149520d84ed32a24f0e53273e1fc5f18807", size = 165523 },
+    { url = "https://files.pythonhosted.org/packages/08/7e/a827fbbf52ede21facc490fc3f53d79454a95563df2766a8a03ee3c825c5/zope_formlib-7.0-py3-none-any.whl", hash = "sha256:c2eb1e475156d3b11cbb4e1a0eace24b53466d2b96d9a4112866516066254878", size = 165029 },
 ]
 
 [[package]]
