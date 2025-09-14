@@ -33,5 +33,7 @@
 
   process.managers.process-compose.settings.environment = [];
 
+  cachix.pull = [ "datakurre" ];
+
   # See full reference at https://devenv.sh/reference/options/
 }
