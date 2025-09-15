@@ -586,8 +586,8 @@ wheels = [
 
 [[package]]
 name = "purjo"
-version = "1.0.0a25"
-source = { git = "https://github.com/datakurre/purjo.git#994675233297ae6404543be6dd1cc9afb91807c6" }
+version = "1.0.0a27.dev0"
+source = { git = "https://github.com/datakurre/purjo.git#d39acb7e4e9f9d118451c18abc8913180d23e66a" }
 dependencies = [
     { name = "javaobj-py3" },
     { name = "operaton-tasks" },
@@ -756,7 +756,7 @@ wheels = [
 
 [[package]]
 name = "robotframework-robocop"
-version = "6.6.1"
+version = "6.7.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jinja2" },
@@ -768,9 +768,9 @@ dependencies = [
     { name = "tomli-w" },
     { name = "typer-slim" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/13/60/b3680d4ed2bfb781ca2290ba2238ca215eb4d5d62ccdda4c6760c5384184/robotframework_robocop-6.6.1.tar.gz", hash = "sha256:26a58eb715a1c0fa55a94a9f607997017cb5c581ab982bbcdb51517fe1a31f3a", size = 667028, upload-time = "2025-08-10T12:41:42.938Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ac/f0/98f595ea55e2c96580faa728b535bacdc2f2f97ee0d48f1b546646cb1196/robotframework_robocop-6.7.0.tar.gz", hash = "sha256:ddb316ea8ca2680abacd01365f57516f20220c4acb833f2cf11f8ce10834700c", size = 678328, upload-time = "2025-09-15T08:37:22.478Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f3/3f/0c6062ad2abccf6088bc3131ba8d25464005a3d3a1d64ef595e2eba780c3/robotframework_robocop-6.6.1-py3-none-any.whl", hash = "sha256:7e50c9647371511211388fae38638a4b318cc464ddc5a82a7630f55e393f3f17", size = 238818, upload-time = "2025-08-10T12:41:41.78Z" },
+    { url = "https://files.pythonhosted.org/packages/66/5e/c87c113b2b493c5572878834ccecc21c424fa9b4c06a79ae7286209e65a0/robotframework_robocop-6.7.0-py3-none-any.whl", hash = "sha256:c8de9b32686d42d8063cbf40d8d769adf9ff4304a316695e8c8133fed3ad27fc", size = 240899, upload-time = "2025-09-15T08:37:21.271Z" },
 ]
 
 [[package]]

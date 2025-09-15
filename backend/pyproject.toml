@@ -1,6 +1,10 @@
+[build-system]
+requires = ["hatchling", "wheel"]
+build-backend = "hatchling.build"
+
 [project]
-name = "backend-environment"
-version = "0.0.1"
+name = "backend"
+dynamic = ["version"]
 dependencies = [
     "Products.CMFPlone==6.1.0",
     "plone.api",
@@ -10,7 +14,35 @@ dependencies = [
 ]
 requires-python = ">=3.11"
 
+[dependency-groups]
+build = [
+    "hatchling",
+    "wheel",
+]
+
+[project.entry-points."z3c.autoinclude.plugin"]
+target = "plone"
+
+[tool.hatch.build]
+strict-naming = false
+packages = ["src/backend",]
+
+[tool.hatch.version]
+path = "src/backend/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+]
+
+[tool.hatch.build.targets.wheel]
+sources = ["src"]
+include = [
+    "/src/backend",
+]
+
 [tool.uv]
+default-groups = ["build"]
 constraint-dependencies = [
     "AccessControl==7.2",
     "Acquisition==6.1",

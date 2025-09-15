@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="ploneconf.core"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Backend: Demo configuration"
+      description="Package to configure demo backend"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      />
+
+</configure>

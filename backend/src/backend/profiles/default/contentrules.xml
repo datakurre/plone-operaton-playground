@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contentrules>
+ <rule name="rule-start-review-process" title="Start Review Process" cascading="False"
+    description="" enabled="True"
+    event="Products.CMFCore.interfaces.IActionSucceededEvent"
+    stop-after="False">
+  <conditions>
+   <condition type="plone.conditions.WorkflowTransition">
+    <property name="wf_transitions">
+     <element>submit</element>
+    </property>
+   </condition>
+  </conditions>
+  <actions>
+   <action type="plone.actions.Webhook">
+    <property
+       name="url">http://localhost:8800/engine-rest/process-definition/key/review-process/start</property>
+    <property name="method">POST</property>
+    <property name="payload">{
+     &quot;businesskey&quot;: &quot;${uid}&quot;,
+     &quot;variables&quot;: {&quot;uid&quot;: {&quot;value&quot; :&quot;${uid}&quot;, &quot;type&quot;: &quot;String&quot;}}
+     }</property>
+    <property name="headers"/>
+    <property name="verbose">False</property>
+   </action>
+  </actions>
+ </rule>
+ <assignment name="rule-start-review-process" bubbles="True" enabled="True" location=""/>
+</contentrules>
