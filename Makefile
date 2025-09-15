@@ -10,6 +10,6 @@ install: .env
 shell: .env ## Enter development shell
 	@devenv shell
 
-.PHONY: up
-up: .env ## Start development services
+.PHONY: start
+start: .env ## Start development services
 	@devenv up

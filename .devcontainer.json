@@ -15,11 +15,20 @@
   "overrideCommand": false,
   "updateContentCommand": "make install",
   "portsAttributes": {
+    "3100": {
+      "label": "robotcode"
+    },
+    "4026": {
+      "label": "pylance"
+    },
     "8000": {
+      "label": "plone"
+    },
+    "8080": {
       "label": "backend"
     },
     "8800": {
-      "label": "engine"
+      "label": "operaton"
     }
   }
 }
