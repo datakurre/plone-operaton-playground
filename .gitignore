@@ -4,3 +4,4 @@ node_modules
 .env
 .devenv*
 devenv.local.nix
+results/

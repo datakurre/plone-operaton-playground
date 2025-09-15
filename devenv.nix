@@ -51,6 +51,10 @@
     };
   };
 
+  packages = [
+    pkgs.vim
+  ];
+
   enterShell = ''
     export UV_PROJECT_ENVIRONMENT=$(pwd)/.venv
     export UV_PYTHON_DOWNLOADS=never
