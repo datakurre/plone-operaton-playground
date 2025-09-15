@@ -1,10 +1,8 @@
 # plone-operaton-playground [![Documentation at GitHub Pages](https://github.com/datakurre/plone-operaton-playground/actions/workflows/pages/pages-build-deployment/badge.svg)](https://datakurre.github.io/plone-operaton-playground)
 
-This repository hosts a playground and documentation for learning BPMN and using it for orchestrating CMS related workflows and integrations with Plone CMS.
+This repository hosts a playground and documentation for learning [BPMN](https://www.bpmn.org/) and using it for orchestrating CMS related workflows and integrations in the context of [Plone CMS](https://plone.org).
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datakurre/plone-operaton-playground)
-
-![Screenshot of GitHub Codespaces](./docs/README.png)
 
 ## Getting started
 
@@ -25,11 +23,10 @@ Activate the playground by starting its built-in Operaton build with
 
 ```console
 $ make start
-✔ Building shell in 6.2s.
-• PID is 56105
-• See logs:  $ tail -f /workspaces/plone-operaton-playground/.devenv/processes.log
-• Stop:      $ devenv processes stop
-✔ Starting processes in 6.2s.
+• Using Cachix caches: devenv, datakurre
+✓ Building processes in 26.6s
+✓ Building shell in 67.4ms
+⠙ Starting processes
 ```
 
 Next, check if `pur`(jo) is already available
@@ -50,28 +47,30 @@ Once you have entered the shell with either `make start shell` or separately `ma
    ```console
    $ mkdir hello-world
    $ cd hello-world
-   $ pur init
+   $ pur init --python
+   Adding README.md
+   Adding .python-version
+   Adding tasks.py
    Adding pyproject.toml
    Adding uv.lock
-   Adding Hello.py
-   Adding .python-version
-   Adding README.md
-   Adding hello.robot
+   Adding hello.bpmn
    ```
 
 2. Deploy and start the example process
 
    ```console
    $ pur run hello.bpmn
-   Started: http://localhost:8080/operaton/app/cockpit/default/#/process-instance
+   Started: http://localhost:8800/operaton/app/cockpit/default/#/process-instance
    ```
 
 3. Serve the example bot
 
    ```console
    $ pur serve .
-   02-02-2025 14:39:49 | INFO | purjo.runner:267 | Subscription | name=My Task
-   02-02-2025 14:39:49 | INFO | operaton.tasks.worker:263 | External task worker started.
+   15-09-2025 19:21:51 | INFO | purjo.runner:112 | Topic | My Topic in BPMN | {'name': 'tasks.main', 'on-fail': 'ERROR', 'process-variables': True}
+   15-09-2025 19:21:51 | INFO | operaton.tasks.worker:263 | External task worker started.
+   15-09-2025 19:21:51 | DEBUG | operaton.tasks.worker:206 | Waiting for 0 pending asyncio task: [].
+   15-09-2025 19:21:51 | INFO | operaton.tasks.worker:241 | Scheduling My Topic in BPMN:2698937b-9269-11f0-858b-6045bd88de3d.
    ```
 
 ![Screenshot of GitHub Codespaces](./docs/operaton.png)
