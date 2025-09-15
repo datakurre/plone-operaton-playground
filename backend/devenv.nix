@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   tasks = {
     "bash:backend:install" = {
@@ -16,19 +15,4 @@
       ];
     };
   };
-
-  languages.python = {
-    enable = true;
-    package = pkgs.python311;
-    uv = {
-      enable = true;
-      package = pkgs.uv;
-    };
-  };
-
-  enterShell = ''
-    export UV_PROJECT_ENVIRONMENT=$(pwd)/backend/.venv
-    export UV_PYTHON_DOWNLOADS=never
-    export UV_PYTHON_PREFERENCE=system
-  '';
 }

@@ -15,9 +15,6 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-IMAGE_NAME_PREFIX=ghcr.io/plone/2025.ploneconf.org
-IMAGE_TAG=latest
-
 # Python checks
 UV?=uv
 
@@ -35,7 +32,7 @@ BIN_FOLDER=$(VENV_FOLDER)/bin
 
 # Environment variables to be exported
 export PYTHONWARNINGS := ignore
-export DOCKER_BUILDKIT := 1
+export UV_PROJECT_ENVIRONMENT := $(VENV_FOLDER)
 
 all: build
 
@@ -59,7 +56,6 @@ instance/etc/zope.ini instance/etc/zope.conf: ## Create instance configuration
 
 .PHONY: config
 config: instance/etc/zope.ini
-
 
 .PHONY: clean
 clean: ## Clean installation and instance

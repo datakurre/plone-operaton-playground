@@ -18,11 +18,8 @@
     "8080": {
       "label": "backend"
     },
-    "8800": {
+    "8081": {
       "label": "engine"
-    },
-    "8000": {
-      "label": "proxy"
     }
   }
 }

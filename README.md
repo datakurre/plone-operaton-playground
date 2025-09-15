@@ -92,7 +92,6 @@ Local VSCode with Podman, might require the following `.devcontainer.json`:
         "bbenoist.Nix",
         "be5invis.toml",
         "charliermarsh.ruff",
-        "d-biehl.robotcode",
         "ms-vscode.makefile-tools",
         "miragon-gmbh.vs-code-bpmn-modeler"
       ]

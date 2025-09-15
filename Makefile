@@ -1,11 +1,11 @@
-.env:
-	@echo CODESPACE_NAME=$$CODESPACE_NAME >.env
-	@echo GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN=$$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN >>.env
-
-.PHONY:
-install: .env
+.PHONY: install
+install:
 	@devenv shell -- echo "Ok."
 
-.PHONY:
-up: .env ## Start services
+.PHONY: shell
+shell: ## Enter development shell
+	@devenv shell
+
+.PHONY: up
+up: ## Start development services
 	@devenv up
