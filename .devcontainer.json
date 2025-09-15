@@ -15,10 +15,10 @@
   "overrideCommand": false,
   "updateContentCommand": "make install",
   "portsAttributes": {
-    "8080": {
+    "8000": {
       "label": "backend"
     },
-    "8081": {
+    "8800": {
       "label": "engine"
     }
   }
