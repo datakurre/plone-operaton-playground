@@ -1,6 +1,6 @@
 # plone-operaton-playground [![Documentation at GitHub Pages](https://github.com/datakurre/plone-operaton-playground/actions/workflows/pages/pages-build-deployment/badge.svg)](https://datakurre.github.io/plone-operaton-playground)
 
-This repository hosts a playground and documentation for learning [BPMN](https://www.bpmn.org/) and using it for orchestrating CMS related workflows and integrations in the context of [Plone CMS](https://plone.org).
+This repository hosts documentation with playground for learning the basics of [BPMN](https://www.bpmn.org/) and using it for orchestrating CMS related workflows and integrations in the context of [Plone](https://plone.org) content management system.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datakurre/plone-operaton-playground)
 
@@ -14,7 +14,7 @@ To get started, pick any of the following options:
 
 * Or clone this repository, and install [GNU Make](https://www.gnu.org/software/make/) and [devenv.sh](https://devenv.sh/).
 
-* Or choose your own adventure by manually installing [uv](https://docs.astral.sh/uv/), [purjo](https://pypi.org/project/purjo/) and [Operaton](https://operaton) or other compatible BPM engine.
+* Or choose your own adventure by manually installing [uv](https://docs.astral.sh/uv/), [Plone](https://plone.org), [purjo](https://pypi.org/project/purjo/) and [Operaton](https://operaton) or other compatible BPM engine.
 
 
 ## Down the rabbit hole
@@ -42,7 +42,7 @@ If not, run `make shell` to manually activate the playground `devenv`shell with 
 
 Once you have entered the shell with either `make start shell` or separately `make start` and `make shell`, you should be able to try out the following example:
 
-1. Create directory for your bot
+1. Create directory for your BPMN orchestrated task
 
    ```console
    $ mkdir hello-world
@@ -56,21 +56,22 @@ Once you have entered the shell with either `make start shell` or separately `ma
    Adding hello.bpmn
    ```
 
-2. Deploy and start the example process
+2. Deploy and start the example BPMN process
 
    ```console
    $ pur run hello.bpmn
    Started: http://localhost:8800/operaton/app/cockpit/default/#/process-instance
    ```
 
-3. Serve the example bot
+3. Serve the example task
 
    ```console
    $ pur serve .
-   15-09-2025 19:21:51 | INFO | purjo.runner:112 | Topic | My Topic in BPMN | {'name': 'tasks.main', 'on-fail': 'ERROR', 'process-variables': True}
+   15-09-2025 19:21:51 | INFO | purjo.runner:112 | Topic | My Topic in BPMN | {'name': 'tasks.main', 'on-fail': 'FAIL', 'process-variables': True}
    15-09-2025 19:21:51 | INFO | operaton.tasks.worker:263 | External task worker started.
    15-09-2025 19:21:51 | DEBUG | operaton.tasks.worker:206 | Waiting for 0 pending asyncio task: [].
    15-09-2025 19:21:51 | INFO | operaton.tasks.worker:241 | Scheduling My Topic in BPMN:2698937b-9269-11f0-858b-6045bd88de3d.
+   ...
    ```
 
 ![Screenshot of GitHub Codespaces](./docs/operaton.png)
@@ -91,12 +92,13 @@ Local VSCode with Podman, might require the following `.devcontainer.json`:
         "bbenoist.Nix",
         "be5invis.toml",
         "charliermarsh.ruff",
+        "d-biehl.robotcode",
         "ms-vscode.makefile-tools",
         "miragon-gmbh.vs-code-bpmn-modeler"
       ]
     }
   },
-  "image": "ghcr.io/cachix/devenv:latest",
+  "image": "ghcr.io/cachix/devenv/devcontainer:v1.8.2",
   "containerEnv": {
     "HOME": "/home/vscode",
     "UV_LINK_MODE": "copy",
@@ -106,7 +108,7 @@ Local VSCode with Podman, might require the following `.devcontainer.json`:
   "runArgs": [
     "--userns=keep-id"
   ],
-  "updateContentCommand": "devenv test"
+  "updateContentCommand": "make install"
 }
 ```
 
@@ -115,7 +117,7 @@ Local VSCode with Podman, might require the following `.devcontainer.json`:
 Very occasional and rare errors like the following have been seen:
 
 ```console
-plone-operaton-playground) vscode ➜ /workspaces/plone-operaton-playground (main) $ make start
+(plone-operaton-playground) vscode ➜ /workspaces/plone-operaton-playground (main) $ make start
 devenv processes up -d
 • Building processes ...
 • Using Cachix: devenv, datakurre
