@@ -91,11 +91,26 @@
   ];
 
   enterShell = ''
-    export UV_PROJECT_ENVIRONMENT=$(pwd)/.venv
+    unset PYTHONPATH
+    export UV_LINK_MODE=copy
     export UV_PYTHON_DOWNLOADS=never
     export UV_PYTHON_PREFERENCE=system
-    export ENGINE_REST_BASE_URL=http://localhost:8800/engine-rest
+
+    if [ ! -d .venv ]; then
+      ${pkgs.uv}/bin/uv venv --python ${pkgs.python3}/bin/python
+    fi
+    source ${pkgs.makeWrapper}/nix-support/setup-hook
+    cp ${pkgs.uv}/bin/uv $(pwd)/.venv/bin/uv; chmod u+w $(pwd)/.venv/bin/uv
+    wrapProgram $(pwd)/.venv/bin/uv --prefix PATH : ${pkgs.python3}/bin
+    ln -fs ${pkgs.git}/bin/git $(pwd)/.venv/bin
+    ln -fs ${pkgs.unzip}/bin/unzip $(pwd)/.venv/bin
+    ln -fs ${pkgs.treefmt}/bin/treefmt $(pwd)/.venv/bin
+    ln -fs ${pkgs.nixfmt-rfc-style}/bin/nixfmt $(pwd)/.venv/bin
+    $(pwd)/.venv/bin/uv pip install -r requirements.txt
+    source $(pwd)/.venv/bin/activate
+
     [ -f "${config.env.DEVENV_STATE}/env_file" ] && source ${config.env.DEVENV_STATE}/env_file
+    export ENGINE_REST_BASE_URL=http://localhost:8800/engine-rest
   '';
 
   cachix.pull = [ "datakurre" ];
