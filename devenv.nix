@@ -25,6 +25,9 @@
         sleep 1
       fi
     done
+    while [ ! -f "${config.env.DEVENV_STATE}/env_file" ]; do
+        sleep 1s
+    done
 
     # Export VAULT_TOKEN
     source ${config.env.DEVENV_STATE}/env_file
@@ -73,7 +76,7 @@
 
   languages.python = {
     enable = true;
-    package = pkgs.python311;
+    package = pkgs.python312;
     uv = {
       enable = true;
       package = pkgs.uv;
@@ -92,7 +95,7 @@
     export UV_PYTHON_DOWNLOADS=never
     export UV_PYTHON_PREFERENCE=system
     export ENGINE_REST_BASE_URL=http://localhost:8800/engine-rest
-    source ${config.env.DEVENV_STATE}/env_file
+    [ -f "${config.env.DEVENV_STATE}/env_file" ] && source ${config.env.DEVENV_STATE}/env_file
   '';
 
   cachix.pull = [ "datakurre" ];

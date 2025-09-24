@@ -27,6 +27,9 @@
     "8080": {
       "label": "backend"
     },
+    "8200": {
+      "label": "vault"
+    },
     "8800": {
       "label": "operaton"
     }
