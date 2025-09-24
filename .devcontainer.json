@@ -7,7 +7,7 @@
         "charliermarsh.ruff",
         "d-biehl.robotcode",
         "ms-vscode.makefile-tools",
-        "miragon-gmbh.vs-code-bpmn-modeler"
+        "/workspaces/plone-operaton-playground/resources/vs-code-bpmn-modeler-0.6.2.vsix"
       ]
     }
   },

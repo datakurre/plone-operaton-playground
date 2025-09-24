@@ -2,9 +2,38 @@
 {
   package.operaton.port = 8800;
   package.operaton.deployment = ./bpmn;
+
   processes = {
     backend.exec = "make -C backend start";
   };
+
+  services.vault = {
+    enable = true;
+    disableMlock = true;
+    ui = true;
+  };
+
+  processes.vault-configure-kv.exec = let configureScript = pkgs.writeShellScriptBin "configure-vault-kv" ''
+    set -euo pipefail
+
+    # Wait for the vault server to start up
+    response=""
+    while [ -z "$response" ]; do
+      response=$(${pkgs.curl}/bin/curl -s --max-time 5 "${config.env.VAULT_API_ADDR}/v1/sys/init" | ${pkgs.jq}/bin/jq '.initialized' || true)
+      if [ -z "$response" ]; then
+        echo "Waiting for vault server to respond..."
+        sleep 1
+      fi
+    done
+
+    # Export VAULT_TOKEN
+    source ${config.env.DEVENV_STATE}/env_file
+
+    # Ensure /kv/secret
+    if ! ${pkgs.vault-bin}/bin/vault secrets list | grep -q '^secret/'; then
+      ${pkgs.vault-bin}/bin/vault secrets enable -path=secret kv-v2
+    fi
+  ''; in "${configureScript}/bin/configure-vault-kv";
 
   services.caddy = {
     enable = true;
@@ -52,6 +81,9 @@
   };
 
   packages = [
+    pkgs.gnugrep
+    pkgs.procps
+    pkgs.vault
     pkgs.vim
   ];
 
@@ -60,6 +92,7 @@
     export UV_PYTHON_DOWNLOADS=never
     export UV_PYTHON_PREFERENCE=system
     export ENGINE_REST_BASE_URL=http://localhost:8800/engine-rest
+    source ${config.env.DEVENV_STATE}/env_file
   '';
 
   cachix.pull = [ "datakurre" ];

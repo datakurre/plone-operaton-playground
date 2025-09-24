@@ -10,6 +10,8 @@ inputs:
   devenv-module-operaton:
     url: gitlab:vasara-bpm/devenv-module-operaton
     flake: false
+nixpkgs:
+  allowUnfree: true
 imports:
 - devenv-module-mvn2nix
 - devenv-module-operaton
