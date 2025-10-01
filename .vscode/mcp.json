@@ -1,0 +1,13 @@
+{
+	"servers": {
+		"robotmcp": {
+			"type": "stdio",
+			"command": ".venv/bin/python",
+			"args": [
+				"-m",
+				"robotmcp.server"
+			]
+		}
+	},
+	"inputs": []
+}
