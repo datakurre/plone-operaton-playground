@@ -66,7 +66,6 @@
         UV_PROJECT_ENVIRONMENT=$(pwd)/.venv
         UV_PYTHON_DOWNLOADS=never
         UV_PYTHON_PREFERENCE=system
-        uv sync
       '';
       before = [
         "devenv:enterShell"

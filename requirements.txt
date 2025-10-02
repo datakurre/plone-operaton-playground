@@ -1,5 +1,5 @@
 black >= 25.1.0 , <26
-git+https://github.com/datakurre/purjo.git@6c80db61f78d82d2d48f98471d3dba927c62c930#purjo
+git+https://github.com/datakurre/purjo.git@1f30220439ba2f6e97fe2b8593e86f27d90dcf3b#purjo
 git+https://github.com/robotframework/robotframework.git@2f42ee808129903f597e3e284f0af4afa0abe8b7#egg=robotframework
 robotframework-tidy >= 4.18.0, <5
 rf-mcp >= 0.21.0
