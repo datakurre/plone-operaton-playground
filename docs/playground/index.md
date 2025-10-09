@@ -42,6 +42,17 @@ Miranum Modeler is based on free, source-available [BPMN.io](https://bpmn.io/) l
 The extension is missing a command for creating new diagrams, but you can create new files in the terminal with the command `pur bpm create` and then open them in the modeler.
 
 
+## Plone
+
+Obviously the playground also comes with [Plone](https://plone.org/). To run better at the Codespaces, the playground uses Plone Classic. The example site is available similarly Operaton after `make start` through Codespaces exposed ports feature. 
+
+![Screenshot of Plone Classic](plone.png)
+
+The example site comes configured with [collective.webhook](https://github.com/collective/collective.webhook) to support interacting with Operaton proceses via [Operaton REST API](https://docs.operaton.org/docs/documentation/reference/rest/specification) (or [Camunda 7 CE REST API](https://docs.camunda.org/manual/7.18/reference/rest/)).
+
+The playground username for Plone admin use is `admin` and the password is `admin`.
+
+
 ## `uv`
 
 [`uv`](https://docs.astral.sh/uv/) is an extremely fast Python package and project manager, written in Rust. It is a single tool that replaces most of the existing Python packaging and virtual environment tools.
@@ -72,3 +83,16 @@ RoboCode features are available in any `.robot` file opened in the editor.
 
 RobotCode requires a Python virtualenv with the `robotframework` package preinstalled. The playground provides one right at `.venv` to support the autodiscovery in the editor. If the virtualenv is missing for some reason, try `make shell` in the terminal to recreate it.
 
+
+## Vault
+
+Sooner than later, integrating task automation with external services requires some secrets management. For demonstration purposes, `make start` also starts Hashicorp Vault with a single key-value secrets mount.
+
+![Screenshot of Vault secret](vault.png)
+
+Vault root token can be exposed using terminal, with
+
+```shell
+cat .devenv/state/env_file
+```
+ 
