@@ -21,7 +21,7 @@ The workshop aims to provide a basic understanding of BPMN and its capabilities 
 |-------|---------|
 | 09.00 | Welcome and **[Foreword](foreword.md)** |
 |       | **[Introduction to BPMN](bpmn/index.md)** |
-|       | Playground introduction |
+|       | **[Playground introduction](playground/index.md)** |
 | Break | Coffee break |
 |       | Basic modeling exercises |
 |       | User tasks, forms and expressions |
@@ -46,4 +46,5 @@ TBA...
 
 foreword.md
 bpmn/index.md
+playground/index.md
 ```
