@@ -1,7 +1,10 @@
 !.vscode
 node_modules
 *.mo
+*.html
 .env
 .devenv*
 devenv.local.nix
 results/
+__pycache__/
+_build/
