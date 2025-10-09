@@ -13,30 +13,34 @@
     ui = true;
   };
 
-  processes.vault-configure-kv.exec = let configureScript = pkgs.writeShellScriptBin "configure-vault-kv" ''
-    set -euo pipefail
+  processes.vault-configure-kv.exec =
+    let
+      configureScript = pkgs.writeShellScriptBin "configure-vault-kv" ''
+        set -euo pipefail
 
-    # Wait for the vault server to start up
-    response=""
-    while [ -z "$response" ]; do
-      response=$(${pkgs.curl}/bin/curl -s --max-time 5 "${config.env.VAULT_API_ADDR}/v1/sys/init" | ${pkgs.jq}/bin/jq '.initialized' || true)
-      if [ -z "$response" ]; then
-        echo "Waiting for vault server to respond..."
-        sleep 1
-      fi
-    done
-    while [ ! -f "${config.env.DEVENV_STATE}/env_file" ]; do
-        sleep 1s
-    done
+        # Wait for the vault server to start up
+        response=""
+        while [ -z "$response" ]; do
+          response=$(${pkgs.curl}/bin/curl -s --max-time 5 "${config.env.VAULT_API_ADDR}/v1/sys/init" | ${pkgs.jq}/bin/jq '.initialized' || true)
+          if [ -z "$response" ]; then
+            echo "Waiting for vault server to respond..."
+            sleep 1
+          fi
+        done
+        while [ ! -f "${config.env.DEVENV_STATE}/env_file" ]; do
+            sleep 1s
+        done
 
-    # Export VAULT_TOKEN
-    source ${config.env.DEVENV_STATE}/env_file
+        # Export VAULT_TOKEN
+        source ${config.env.DEVENV_STATE}/env_file
 
-    # Ensure /kv/secret
-    if ! ${pkgs.vault-bin}/bin/vault secrets list | grep -q '^secret/'; then
-      ${pkgs.vault-bin}/bin/vault secrets enable -path=secret kv-v2
-    fi
-  ''; in "${configureScript}/bin/configure-vault-kv";
+        # Ensure /kv/secret
+        if ! ${pkgs.vault-bin}/bin/vault secrets list | grep -q '^secret/'; then
+          ${pkgs.vault-bin}/bin/vault secrets enable -path=secret kv-v2
+        fi
+      '';
+    in
+    "${configureScript}/bin/configure-vault-kv";
 
   services.caddy = {
     enable = true;
@@ -45,11 +49,16 @@
         admin off
       }
       :8000 {
-        ${if (config.env ? CODESPACE_NAME && config.env.CODESPACE_NAME != "") then ''
-        rewrite /VirtualHostBase/https/${config.env.CODESPACE_NAME}-8000.${config.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}:443/Plone/VirtualHostRoot{uri}
-        '' else ''
-        rewrite /VirtualHostBase/http/localhost:8000/Plone/VirtualHostRoot{uri}
-        ''}
+        ${
+          if (config.env ? CODESPACE_NAME && config.env.CODESPACE_NAME != "") then
+            ''
+              rewrite /VirtualHostBase/https/${config.env.CODESPACE_NAME}-8000.${config.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}:443/Plone/VirtualHostRoot{uri}
+            ''
+          else
+            ''
+              rewrite /VirtualHostBase/http/localhost:8000/Plone/VirtualHostRoot{uri}
+            ''
+        }
         reverse_proxy localhost:8080
       }
     '';
