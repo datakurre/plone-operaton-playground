@@ -37,7 +37,7 @@ BPMN gateways control which one of the available paths is taken at the time of e
 ## Conditional flows
 
 ```{bpmn-figure} sequence-flow-redux
-With {bpmn}`exclusive-gateway` **exclusive gateways**, you can direct the flow of the process based on the results from the completed tasks. This already allows you to implement complex workflows beyond the plain `robot`. {download}`sequence-flow-redux.bpmn`
+With {bpmn}`exclusive-gateway` **exclusive gateways**, you can direct the flow of the process based on the results from the completed tasks. {download}`sequence-flow-redux.bpmn`
 ```
 
 
@@ -65,19 +65,19 @@ Not all BPMN tokens need to reach the same {bpmn}`end-event` **end event** for t
 ## Events at boundary
 
 ```{bpmn-figure} boundary-events
-Attaching events to task boundaries is where BPMN superpowers really begin. In this example, a {bpmn}`non-interrupting-timer-boundary-event` **non-interrupting timer boundary event** is used to send notification about test execution taking too much time. Non-interrupting events, as their name suggests, don't interrupt the task they are connected to. Instead, they create a new token for the path they start (in the example, once or regularly as long as the task has not been completed). {download}`boundary-events.bpmn`
+Attaching events onto element boundaries is where BPMN really begins to shine. In this example, a {bpmn}`non-interrupting-timer-boundary-event` **non-interrupting timer boundary event** is used to send notification about test execution taking too much time. Non-interrupting events, as their name suggests, don't interrupt the task they are connected to. Instead, they create a new token for the path they start (in the example, once or regularly as long as the task has not been completed). {download}`boundary-events.bpmn`
 ```
 
 ## Errors at boundary
 
-There are two kind of errors in process automation:
+There are two kind of errors in BPMN driven process automation:
 
-* **Application errors**, which are caused by technical issues like network outages or programming errors, and can be fixed by retrying the failing part of the process once the technical issue has been resolved.
+* **Application errors**, which are caused by technical issues like network outages or programming errors, and can be **fixed by retrying** the failing part of the process once the technical issue has been resolved.
 
-* **Business errors**, which are known exceptions in the process itself, and cannot be fixed by simply retrying, but must be expected and handled on the BPMN diagram level instead.
+* **Business errors**, which are known exceptions in the process itself, and cannot be fixed by simply retrying, but must be expected and **handled on the BPMN diagram level** instead.
 
 ```{bpmn-figure} boundary-bpmn-error
-In this example, a business error is expected with a {bpmn}`bpmn-error-boundary-event` **error boundary event** (which is always interrupting), and it is used to route the process to an alternative {bpmn}`error-end-event` business error end event for further re-routing on calling parent process. {download}`boundary-bpmn-error.bpmn`
+In this example, a business error is expected with a {bpmn}`bpmn-error-boundary-event` **error boundary event** (which is always interrupting), and it is used to route the process to an alternative {bpmn}`error-end-event` business error end event for further re-routing on the calling parent process. {download}`boundary-bpmn-error.bpmn`
 ```
 
 ## Embedded sub-process

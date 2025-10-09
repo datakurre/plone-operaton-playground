@@ -15,7 +15,19 @@ This documentation accompanies a playground, which you can open in [GitHub Codes
 
 The workshop aims to provide a basic understanding of BPMN and its capabilities in orchestraing CMS related workflows and integrations using the Operaton BPM engine. Participants will gain the knowledge needed for further self-study, experimentation, and informed decision-making on integrating these tools into their own projects.
 
-Schedule TBA
+**Monday 13th of October 2025**
+
+| Time  | Session |
+|-------|---------|
+| 09.00 | Welcome and **[Foreword](foreword.md)** |
+|       | **[Introduction to BPMN](bpmn/index.md)** |
+|       | Playground introduction |
+| Break | Coffee break |
+|       | Basic modeling exercises |
+|       | User tasks, forms and expressions |
+|       | Modeling for execution |
+| 12.45 | Discussion |
+| 13.00 | Workshop ends |
 
 
 ## Preparations
@@ -26,6 +38,8 @@ The workshop playground has been tested with GitHub Codespaces, but with some ef
 ## Index
 
 --- 
+
+TBA...
 
 ```{toctree}
 :maxdepth: 1

@@ -17,6 +17,6 @@ The problems Stephan highlighted in state-based workflows:
 
 ## Activity-based workflows
 
-Also, from the human perspective, the reality is often more complex:
+From the human perspective, the reality is often more complex:
 
 ![Simple state-based publication workflow](./foreword-activity-based.png)

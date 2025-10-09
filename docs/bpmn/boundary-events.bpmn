@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0vvm2t9" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0vvm2t9" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21">
   <bpmn:process id="Process_1jrg0o0" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" name="Article submitted for peer review">
       <bpmn:outgoing>Flow_13drrwz</bpmn:outgoing>
@@ -19,12 +19,12 @@
         <bpmn:timeCycle xsi:type="bpmn:tFormalExpression">R/P1D</bpmn:timeCycle>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
-    <bpmn:task id="Activity_1h6wn8s" name="Notify reviewer">
+    <bpmn:task id="Activity_1h6wn8s" name="Remind reviewer">
       <bpmn:incoming>Flow_1365ftf</bpmn:incoming>
       <bpmn:outgoing>Flow_10pyr0f</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_1365ftf" sourceRef="Event_1aav8ht" targetRef="Activity_1h6wn8s" />
-    <bpmn:endEvent id="Event_05ij7co" name="Notification sent">
+    <bpmn:endEvent id="Event_05ij7co" name="Reminder sent">
       <bpmn:incoming>Flow_10pyr0f</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_10pyr0f" sourceRef="Activity_1h6wn8s" targetRef="Event_05ij7co" />
@@ -54,7 +54,7 @@
       <bpmndi:BPMNShape id="Event_05ij7co_di" bpmnElement="Event_05ij7co">
         <dc:Bounds x="562" y="192" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="541" y="235" width="79" height="14" />
+          <dc:Bounds x="545" y="235" width="72" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0sgcrzn_di" bpmnElement="Event_1aav8ht">
