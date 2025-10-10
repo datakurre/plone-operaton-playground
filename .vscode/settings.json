@@ -1,0 +1,13 @@
+{
+  "terminal.integrated.env.linux": {
+    "ENGINE_REST_BASE_URL": "http://localhost:8800/engine-rest"
+  },
+  "terminal.integrated.env.osx": {
+    "ENGINE_REST_BASE_URL": "http://localhost:8800/engine-rest"
+  },
+  "terminal.integrated.env.windows": {
+    "ENGINE_REST_BASE_URL": "http://localhost:8800/engine-rest"
+  }
+}
+
+
