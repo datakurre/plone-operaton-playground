@@ -1,0 +1,11 @@
+{
+  "type": "default",
+  "id": "Form_1kfzqhb",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "components": [],
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0"
+}

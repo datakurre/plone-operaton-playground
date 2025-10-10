@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0vvm2t9" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0vvm2t9" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21">
   <bpmn:process id="Process_1jrg0o0" isExecutable="true">
-    <bpmn:subProcess id="Activity_0pck51p" name="Test Run">
+    <bpmn:subProcess id="Activity_0pck51p" name="Review process">
       <bpmn:incoming>Flow_1tnq973</bpmn:incoming>
       <bpmn:outgoing>Flow_0nymvbn</bpmn:outgoing>
       <bpmn:task id="Activity_1vq7ik7" name="Peer review">
@@ -50,12 +50,6 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1jrg0o0">
-      <bpmndi:BPMNShape id="Event_1ivx4af_di" bpmnElement="Event_1tec5vr">
-        <dc:Bounds x="802" y="362" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="796" y="405" width="50" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_03wpowj_di" bpmnElement="Activity_0pck51p" isExpanded="true">
         <dc:Bounds x="238" y="80" width="500" height="240" />
         <bpmndi:BPMNLabel />
@@ -119,6 +113,12 @@
         <dc:Bounds x="802" y="177" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="781" y="220" width="81" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ivx4af_di" bpmnElement="Event_1tec5vr">
+        <dc:Bounds x="802" y="362" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="796" y="405" width="50" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1u4jkz0_di" bpmnElement="Event_1g1zjfb">

@@ -47,4 +47,5 @@ TBA...
 foreword.md
 bpmn/index.md
 playground/index.md
+modeling/index.md
 ```
