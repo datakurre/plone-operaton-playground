@@ -19,13 +19,13 @@ The workshop aims to provide a basic understanding of BPMN and its capabilities 
 
 | Time  | Session |
 |-------|---------|
-| 09.00 | Welcome and **[Foreword](foreword.md)** |
+| 09.30 | Welcome and **[Foreword](foreword.md)** |
 |       | **[Introduction to BPMN](bpmn/index.md)** |
 |       | **[Playground introduction](playground/index.md)** |
 | Break | Coffee break |
-|       | Basic modeling exercises |
-|       | User tasks, forms and expressions |
-|       | Modeling for execution |
+|       | **[Basic modeling exercises](modeling/index.md)** |
+|       | **[User tasks and forms](forms/index.md)** |
+|       | **[Modeling for execution](operaton/index.md)** |
 | 12.45 | Discussion |
 | 13.00 | Workshop ends |
 
@@ -37,10 +37,6 @@ The workshop playground has been tested with GitHub Codespaces, but with some ef
 
 ## Index
 
---- 
-
-TBA...
-
 ```{toctree}
 :maxdepth: 1
 
@@ -48,4 +44,10 @@ foreword.md
 bpmn/index.md
 playground/index.md
 modeling/index.md
+forms/index.md
+operaton/index.md
+# bpmn/advanced.md
+# purjo/index.md
+bpmn/juel.md
+ecosystem.md
 ```

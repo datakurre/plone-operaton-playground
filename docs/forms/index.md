@@ -96,7 +96,7 @@ These forms are also supported by default in the current version of Operaton Tas
 ![Operaton Tasklist with form](./operaton-tasklist.png)
 
 
-## Binding forms
+## Bindings
 
 For historical reasons, bpmn.io forms may still be called "Camunda Forms", as is the case in our modeling tool. Forms are bound to tasks by choosing the type "Camunda Form" and setting the "Form Reference" to the form ID specified in the form editor.
 

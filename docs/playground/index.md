@@ -10,7 +10,7 @@ Technically, the playground is just a git repository containing both this docume
 
 Using the playground requires substantial use of the terminal because the main tools used, [`uv`](https://docs.astral.sh/uv/) and [`pur`(jo)](https://pypi.org/project/purjo/), are all command-line tools. In addition, the playground includes [`robot`](https://robotframework.org/) to support Robot Framework based task automation.
 
-A new terminal can be launched using the shortcut `Ctrl+Shift+S` or `Cmd+Shift+S`. Alternatively, it can be found from the menu `Terminal > New Terminal`. Or with editor command `> Terminal: Create New Terminal`.
+A new terminal can be launched using the shortcut `Ctrl+Shift+C` or `Cmd+Shift+C`. Alternatively, it can be found from the menu `Terminal > New Terminal`. Or with editor command `> Terminal: Create New Terminal`.
 
 ![Screenshot of terminal in GitHub Codespaces](./terminal.png)
 
