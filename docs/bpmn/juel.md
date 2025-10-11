@@ -11,18 +11,18 @@ Here are some examples of JUEL expressions:
 
 | Expression             | Expected Type | Result          |
 |------------------------|---------------|-----------------|
-| Hello, World!          | String        | "Hello, World!" |
-| Hello, ${"World!"}     | String        | "Hello, World!" |
+| Hello, World!          | String        | \\"Hello, World!\\" |
+| Hello, ${\\"World!\\"}     | String        | \\"Hello, World!\\" |
 | ${3.14}                | double        | 3.14            |
 | ${null}                | null          | null            |
 | ${true && false}       | Boolean       | false           |
 | ${5 + 10}              | int           | 15              |
 | ${4 > 3}               | Boolean       | true            |
-| ${5 > 3 ? "Yes" : "No"}| String        | "Yes"           |
-| ${3 > 5 ? "Yes" : "No"}| String        | "No"            |
-| ${empty ""}            | Boolean       | true            |
+| ${5 > 3 ? \\"Yes\\" : \\"No\\"}| String        | \\"Yes\\"           |
+| ${3 > 5 ? \\"Yes\\" : \\"No\\"}| String        | \\"No\\"            |
+| ${empty \\"\\"}            | Boolean       | true            |
 | ${empty null}          | Boolean       | true            |
-| ${empty "text"}        | Boolean       | false           |
+| ${empty \\"text\\"}        | Boolean       | false           |
 
 
 ## Operators in expressions

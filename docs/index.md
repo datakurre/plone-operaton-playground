@@ -21,6 +21,7 @@ The workshop aims to provide a basic understanding of BPMN and its capabilities 
 |-------|---------|
 | 09.30 | Welcome and **[Foreword](foreword.md)** |
 |       | **[Introduction to BPMN](bpmn/index.md)** |
+|       | **[Overview on the ecosystem](ecosystem.md)** |
 |       | **[Playground introduction](playground/index.md)** |
 | Break | Coffee break |
 |       | **[Basic modeling exercises](modeling/index.md)** |
